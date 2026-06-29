@@ -1,33 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  Nav,
-  Hero,
-  Marquee,
-  About,
-  Process,
-  Services,
-  Featured,
-  Markets,
-  Pricing,
-  Quality,
-  Contact,
-  Footer,
-} from "@/components/site";
+import { Landing } from "@/components/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "GroOut — Creative Growth Agency for Brands Ready to Scale" },
+      { title: "GroOut · Creative Growth Studio for Creators & Brands" },
       {
         name: "description",
         content:
-          "Content, design, social media, podcasts, paid ads and repurposing — one growth-focused system from Mumbai to the world.",
+          "GroOut is your entire content team: video editing, design, social media, podcasts, paid ads and repurposing. One dedicated crew, from Bengaluru and Mumbai to the world.",
       },
-      { property: "og:title", content: "GroOut — Creative Growth Agency" },
+      { property: "og:title", content: "GroOut · Creative Growth Studio" },
       {
         property: "og:description",
         content:
-          "Content, Design & Growth Systems for brands ready to scale. India and International clients welcome.",
+          "Your entire content team in one place. Video editing, design, social, podcasts, ads and repurposing, from Bengaluru and Mumbai to the world.",
       },
     ],
   }),
@@ -35,20 +22,5 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  return (
-    <main className="bg-paper text-foreground">
-      <Nav />
-      <Hero />
-      <Marquee />
-      <About />
-      <Process />
-      <Services />
-      <Featured />
-      <Markets />
-      <Pricing />
-      <Quality />
-      <Contact />
-      <Footer />
-    </main>
-  );
+  return <Landing />;
 }

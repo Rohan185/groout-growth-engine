@@ -12,6 +12,26 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
+// Local-business / organization structured data for search (helps local SEO in
+// Bengaluru and Mumbai). Keep email/locations in sync with src/lib/groout-data.ts.
+const JSON_LD = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "GroOut",
+  url: "https://groout.com",
+  logo: "https://groout.com/groout-black.png",
+  image: "https://groout.com/og.png",
+  description:
+    "Creative growth studio. Your entire content team: editing, design, social media, podcasts, paid ads and repurposing. Bengaluru and Mumbai, serving clients worldwide.",
+  slogan: "You create. We grow it out.",
+  email: "hello@groout.com",
+  areaServed: ["India", "Worldwide"],
+  address: [
+    { "@type": "PostalAddress", addressLocality: "Bengaluru", addressRegion: "Karnataka", addressCountry: "IN" },
+    { "@type": "PostalAddress", addressLocality: "Mumbai", addressRegion: "Maharashtra", addressCountry: "IN" },
+  ],
+});
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -24,7 +44,7 @@ function NotFoundComponent() {
         <div className="mt-6">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-full bg-grow px-5 py-2.5 text-sm font-medium text-paper transition-opacity hover:opacity-90"
+            className="inline-flex items-center justify-center rounded-full bg-grow px-5 py-2.5 text-sm font-medium text-[oklch(0.02_0_0)] transition-opacity hover:opacity-90"
           >
             Go home
           </Link>
@@ -56,7 +76,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               router.invalidate();
               reset();
             }}
-            className="inline-flex items-center justify-center rounded-full bg-grow px-5 py-2.5 text-sm font-medium text-paper transition-opacity hover:opacity-90"
+            className="inline-flex items-center justify-center rounded-full bg-grow px-5 py-2.5 text-sm font-medium text-[oklch(0.02_0_0)] transition-opacity hover:opacity-90"
           >
             Try again
           </button>
@@ -77,30 +97,43 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "GroOut — Creative Growth Agency for Brands Ready to Scale" },
+      { title: "GroOut · Creative Growth Studio for Creators & Brands" },
       {
         name: "description",
         content:
-          "GroOut is a creative growth agency for creators, founders and businesses — content production, social media, video editing, design, podcasts, paid ads and repurposing under one growth-focused system.",
+          "GroOut is a creative growth studio in Bengaluru and Mumbai. Your entire content team: editing, design, social media, podcasts, paid ads and repurposing, for creators and brands worldwide.",
       },
       { name: "author", content: "GroOut" },
-      { property: "og:title", content: "GroOut — Creative Growth Agency" },
+      { name: "robots", content: "index, follow" },
+      { name: "theme-color", content: "#f7f6f2" },
+      { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "GroOut" },
+      { property: "og:title", content: "GroOut · Creative Growth Studio" },
       {
         property: "og:description",
         content:
-          "Content, Design & Growth Systems for brands ready to scale. Rooted in Mumbai. Built to grow out worldwide.",
+          "Your entire content team: editing, design, social, podcasts, ads and repurposing. Bengaluru and Mumbai, serving clients worldwide.",
       },
-      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://groout.com/" },
+      { property: "og:image", content: "https://groout.com/og.png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "GroOut. You create. We grow it out." },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@groout" },
+      { name: "twitter:title", content: "GroOut · Creative Growth Studio" },
+      { name: "twitter:description", content: "Your entire content team, from Bengaluru and Mumbai to the world." },
+      { name: "twitter:image", content: "https://groout.com/og.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+      { rel: "canonical", href: "https://groout.com/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap",
       },
     ],
   }),
@@ -115,6 +148,7 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON_LD }} />
       </head>
       <body>
         {children}

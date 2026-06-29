@@ -1,129 +1,301 @@
-export type Service = {
-  name: string;
-  indiaPrice: string;
-  intlPrice: string;
-};
+/* =====================================================================
+   GroOut content model — NO PRICING (quote-on-a-call model).
+   All numbers/prices intentionally omitted; scope is quoted per project.
+   ===================================================================== */
 
 export type Pillar = {
   number: string;
   category: string;
   description: string;
-  services: Service[];
+  items: string[];
 };
 
 export const PILLARS: Pillar[] = [
   {
     number: "01",
     category: "Full Production Management",
-    description:
-      "End-to-end channel ownership. Producers, schedules, scripts, shoots and shipping — handled.",
-    services: [
-      { name: "Done-for-you channel management", indiaPrice: "₹60K–1.5L / mo", intlPrice: "$1,500–5,000 / mo" },
-      { name: "Dedicated producer / project manager", indiaPrice: "₹25K–50K / mo", intlPrice: "$1,200–3,000 / mo" },
-      { name: "Faceless channel management", indiaPrice: "₹40K–1L / mo", intlPrice: "$1,200–4,000 / mo" },
-      { name: "Pre-production: scripting, scheduling, shot lists", indiaPrice: "₹10K–25K / mo", intlPrice: "$600–2,000 / mo" },
-      { name: "Live event / on-site production", indiaPrice: "₹15K–50K / event", intlPrice: "Local partner required" },
+    description: "End-to-end channel ownership. Producers, schedules, scripts, shoots and shipping, handled.",
+    items: [
+      "Done-for-you channel management",
+      "Dedicated producer / project manager",
+      "Faceless channel management",
+      "Pre-production: scripting, scheduling, shot lists",
+      "Live event / on-site production",
     ],
   },
   {
     number: "02",
     category: "Brand, Business & Startup Services",
-    description:
-      "Positioning, presence and launch firepower for founders building real categories.",
-    services: [
-      { name: "Full social presence build", indiaPrice: "₹25K–75K / mo", intlPrice: "$1,500–6,000 / mo" },
-      { name: "Launch campaign content packages", indiaPrice: "₹30K–90K", intlPrice: "$2,000–8,000" },
-      { name: "Founder personal brand support", indiaPrice: "₹20K–50K / mo", intlPrice: "$1,500–6,000 / mo" },
-      { name: "Influencer sourcing & collab management", indiaPrice: "₹15K–35K / mo", intlPrice: "$1,000–4,000 / mo" },
-      { name: "Pitch deck / investor deck design", indiaPrice: "₹10K–25K", intlPrice: "$500–2,000" },
+    description: "Positioning, presence and launch firepower for founders building real categories.",
+    items: [
+      "Full social presence build",
+      "Launch campaign content packages",
+      "Founder personal brand support",
+      "Influencer sourcing & collab management",
+      "Pitch deck / investor deck design",
     ],
   },
   {
     number: "03",
     category: "Social Media Management",
-    description:
-      "Operators on your accounts — calendars, copy, comments, DMs, and consistent output.",
-    services: [
-      { name: "Full account management", indiaPrice: "₹15K–40K / mo", intlPrice: "$1,000–5,000 / mo" },
-      { name: "LinkedIn content & ghostwriting", indiaPrice: "₹20K–50K / mo", intlPrice: "$2,000–10,000 / mo" },
-      { name: "Community management", indiaPrice: "₹8K–20K / mo", intlPrice: "$500–2,000 / mo" },
-      { name: "WhatsApp Business catalog & broadcasts", indiaPrice: "₹5K–12K / mo", intlPrice: "$300–800 / mo" },
+    description: "Operators on your accounts: calendars, copy, comments, DMs and consistent output.",
+    items: [
+      "Full account management",
+      "LinkedIn content & ghostwriting",
+      "Community management",
+      "WhatsApp Business catalog & broadcasts",
     ],
   },
   {
     number: "04",
     category: "Design & Visual Content",
-    description:
-      "Identity systems, scroll-stopping covers, and the visual language that makes you recognisable.",
-    services: [
-      { name: "YouTube thumbnails", indiaPrice: "₹500–2K each", intlPrice: "$25–100 each" },
-      { name: "Instagram posters / carousels", indiaPrice: "₹500–1.5K each", intlPrice: "$20–80 each" },
-      { name: "LinkedIn poster & post graphics", indiaPrice: "₹500–1.2K each", intlPrice: "$20–60 each" },
-      { name: "Catalog design", indiaPrice: "₹5K–15K each", intlPrice: "$300–1,200 each" },
-      { name: "Brand identity kit", indiaPrice: "₹15K–30K", intlPrice: "$1,500–5,000" },
-      { name: "Channel art / banner / logo", indiaPrice: "₹5K–12K", intlPrice: "$300–1,000" },
-      { name: "Email signature & stationery design", indiaPrice: "₹2K–5K", intlPrice: "$100–300" },
+    description: "Identity systems, scroll-stopping covers and the visual language that makes you recognisable.",
+    items: [
+      "YouTube thumbnails",
+      "Instagram posters / carousels",
+      "LinkedIn post graphics",
+      "Catalog design",
+      "Brand identity kit",
+      "Channel art / banner / logo",
     ],
   },
   {
     number: "05",
     category: "Video Editing & Production",
-    description:
-      "Editors who cut for pace, story and platform — long, short and live.",
-    services: [
-      { name: "Long-form YouTube editing", indiaPrice: "₹15K–35K / mo", intlPrice: "$700–1,500 / mo" },
-      { name: "Short-form / Reels / Shorts editing", indiaPrice: "₹8K–20K / mo", intlPrice: "$700–2,500 / mo" },
-      { name: "Multi-camera editing", indiaPrice: "₹20K–40K / mo", intlPrice: "$1,000–3,500 / mo" },
-      { name: "Colour grading & sound design", indiaPrice: "₹8K–18K / mo", intlPrice: "$400–1,500 / mo" },
-      { name: "Live stream editing & highlights", indiaPrice: "₹10K–25K / mo", intlPrice: "$600–2,000 / mo" },
+    description: "Editors who cut for pace, story and platform. Long, short and live.",
+    items: [
+      "Long-form YouTube editing",
+      "Short-form / Reels / Shorts editing",
+      "Multi-camera editing",
+      "Colour grading & sound design",
+      "Live stream editing & highlights",
     ],
   },
   {
     number: "06",
     category: "Full Podcast Management",
-    description:
-      "From raw audio to a distributed show — edited, mastered, packaged and published.",
-    services: [
-      { name: "Full podcast editing", indiaPrice: "₹20K–40K / mo", intlPrice: "$1,000–3,500 / mo" },
-      { name: "Audio mastering & mixing", indiaPrice: "₹5K–10K / ep", intlPrice: "$100–300 / ep" },
-      { name: "Podcast cover art & episode thumbnails", indiaPrice: "₹3K–8K / mo", intlPrice: "$150–500 / mo" },
-      { name: "Show notes & episode descriptions", indiaPrice: "₹3K–6K / mo", intlPrice: "$150–400 / mo" },
-      { name: "Distribution to Spotify, Apple & platforms", indiaPrice: "₹3K–5K / mo", intlPrice: "$150–400 / mo" },
+    description: "From raw audio to a distributed show: edited, mastered, packaged and published.",
+    items: [
+      "Full podcast editing",
+      "Audio mastering & mixing",
+      "Cover art & episode thumbnails",
+      "Show notes & descriptions",
+      "Distribution to Spotify, Apple & more",
     ],
   },
   {
     number: "07",
-    category: "Paid Ads Management for Creators",
-    description:
-      "Spend that compounds — creative, targeting and testing operated weekly.",
-    services: [
-      { name: "Paid ads management", indiaPrice: "₹20K–60K / mo", intlPrice: "$1,500–8,000 / mo" },
-      { name: "Ad creative production", indiaPrice: "₹10K–25K / mo", intlPrice: "$600–2,500 / mo" },
-      { name: "Boosting top-performing organic content", indiaPrice: "₹5K–15K / mo + spend", intlPrice: "$300–1,500 / mo + spend" },
-      { name: "A/B testing & campaign optimisation", indiaPrice: "₹8K–15K / mo", intlPrice: "$500–1,500 / mo" },
+    category: "Paid Ads Management",
+    description: "Spend that compounds: creative, targeting and testing, operated weekly.",
+    items: [
+      "Paid ads management",
+      "Ad creative production",
+      "Boosting top-performing organic content",
+      "A/B testing & campaign optimisation",
     ],
   },
   {
     number: "08",
     category: "Clipping & Repurposing",
-    description:
-      "One piece of content, ten distribution moments — engineered for every platform.",
-    services: [
-      { name: "Podcast / long-form to short clips", indiaPrice: "₹10K–25K / mo", intlPrice: "$800–3,000 / mo" },
-      { name: "Per-clip ad-hoc pricing", indiaPrice: "₹300–800 / clip", intlPrice: "$15–50 / clip" },
-      { name: "Long-to-short repurposing", indiaPrice: "₹6K–15K / mo", intlPrice: "$400–1,200 / mo" },
-      { name: "Multi-platform clip formatting", indiaPrice: "₹2K–5K / mo add-on", intlPrice: "$100–300 / mo add-on" },
-      { name: "Event reel package", indiaPrice: "₹5K–15K / event", intlPrice: "$250–600 / event" },
-      { name: "Local business monthly reel package", indiaPrice: "₹8K–20K / mo", intlPrice: "$400–1,200 / mo" },
-      { name: "Single AI-assisted reel edit", indiaPrice: "₹800–2K / reel", intlPrice: "$40–100 / reel" },
+    description: "One piece of content, ten distribution moments, engineered for every platform.",
+    items: [
+      "Long-form to short clips",
+      "Long-to-short repurposing",
+      "Multi-platform clip formatting",
+      "Event reel packages",
+      "AI-assisted reel edits",
     ],
   },
 ];
 
 export const NAV_LINKS = [
+  { href: "#work", label: "Work" },
   { href: "#services", label: "Services" },
-  { href: "#process", label: "Work Flow" },
-  { href: "#pricing", label: "Pricing" },
-  { href: "#quality", label: "Quality" },
+  { href: "#process", label: "Process" },
+  { href: "#faq", label: "FAQ" },
   { href: "#contact", label: "Contact" },
+];
+
+/* =====================================================================
+   SITE CONFIG — ⚠️ PLACEHOLDER values. Replace with GroOut's real details.
+   Wired into every CTA, the contact section and the footer.
+   ===================================================================== */
+export const SITE = {
+  whatsappNumber: "910000000000", // ⚠️ real number, country code, digits only
+  whatsappMessage: "Hi GroOut! I'd like to talk about a project.",
+  phone: "+910000000000", // ⚠️ real phone
+  email: "hello@groout.com", // ⚠️ real inbox (.com to match the live domain)
+  city: "Bengaluru & Mumbai, India",
+  instagram: "https://instagram.com/", // ⚠️ real links (leave "" to hide)
+  linkedin: "https://linkedin.com/company/",
+  youtube: "",
+};
+
+export const waLink = (msg?: string) =>
+  `https://wa.me/${SITE.whatsappNumber}?text=${encodeURIComponent(msg ?? SITE.whatsappMessage)}`;
+
+/* ---- 3 service buckets (the 8 pillars, regrouped). Numbers map to PILLARS. ---- */
+export const BUCKETS: { key: string; title: string; line: string; pillarNumbers: string[] }[] = [
+  {
+    key: "create",
+    title: "Create",
+    line: "Content that earns attention, edited and designed for the platform.",
+    pillarNumbers: ["05", "04", "06"],
+  },
+  {
+    key: "distribute",
+    title: "Distribute",
+    line: "Show up everywhere, consistently, with managed accounts and full production.",
+    pillarNumbers: ["03", "08", "01"],
+  },
+  {
+    key: "grow",
+    title: "Grow",
+    line: "Turn attention into results with paid amplification and brand building.",
+    pillarNumbers: ["07", "02"],
+  },
+];
+
+/* ---- Work showcase — ⚠️ PLACEHOLDER tiles. Drop in real reels/thumbnails. ---- */
+export const WORK: { format: string; platform: string; tag: string }[] = [
+  { format: "Reel", platform: "Instagram", tag: "Local café" },
+  { format: "Thumbnail", platform: "YouTube", tag: "Education" },
+  { format: "Podcast clip", platform: "Shorts", tag: "Founder show" },
+  { format: "Ad creative", platform: "Meta", tag: "D2C brand" },
+  { format: "Long-form edit", platform: "YouTube", tag: "Creator" },
+  { format: "Carousel", platform: "LinkedIn", tag: "B2B" },
+];
+
+/* ---- Repurposing fan-out: one input, many outputs ---- */
+export const REPURPOSE_OUT = ["Reels", "Shorts", "TikTok", "Carousels", "Quote cards", "Threads", "Ad cuts", "Email GIFs"];
+
+/* ---- Buyer-facing 3-step ---- */
+export const HOW_STEPS: { n: string; t: string; d: string }[] = [
+  { n: "01", t: "Brief", d: "Tell us your goals, drop your footage and references. We set up a shared board and a style guide for your brand." },
+  { n: "02", t: "Build", d: "Our team edits, designs and produces. Queue as many requests as you like; revisions are built in." },
+  { n: "03", t: "Grow", d: "Platform-ready content goes out on schedule. We track what works and sharpen every month." },
+];
+
+/* ---- The pipeline under the hood ---- */
+export const PIPELINE: { n: string; t: string; d: string }[] = [
+  { n: "01", t: "Discover", d: "Brief, goals, platform, audience and current content." },
+  { n: "02", t: "Plan", d: "Strategy, scripts, calendar, shot lists and design direction." },
+  { n: "03", t: "Produce", d: "Editing, design, clipping, captions, thumbnails and reels." },
+  { n: "04", t: "Distribute", d: "Posting, scheduling, formatting, community and ad launch." },
+  { n: "05", t: "Grow", d: "Reporting, optimisation, renewals and scaling." },
+];
+
+/* ---- Ways to work together (no pricing) ---- */
+export const WAYS: { name: string; tagline: string; audience: string; points: string[]; highlight?: boolean }[] = [
+  {
+    name: "Single project",
+    tagline: "One outcome, done right",
+    audience: "A launch video, a brand kit, an event reel.",
+    points: ["Scoped to one clear outcome", "Defined timeline and deliverables", "Two free revisions"],
+  },
+  {
+    name: "Monthly partner",
+    tagline: "Your content engine",
+    audience: "Creators and brands who need steady output.",
+    points: ["Ongoing reels, edits and design", "Social management and repurposing", "Monthly planning and reporting"],
+    highlight: true,
+  },
+  {
+    name: "Full management",
+    tagline: "Hand over the channel",
+    audience: "When you want the whole thing run for you.",
+    points: ["Dedicated producer and team", "Strategy, production and ads", "Priority turnaround"],
+  },
+];
+
+/* ---- Two markets ---- */
+export const MARKET_INDIA = [
+  "Referral, direct DM and local network",
+  "Fast, trust-led closing",
+  "Month-to-month friendly",
+  "Built on trust, speed and responsiveness",
+];
+export const MARKET_INTL = [
+  "LinkedIn, content and case studies",
+  "Proof-led closing",
+  "Three to six month engagements",
+  "Built on results, professionalism and time-zone coverage",
+];
+
+/* ---- Why GroOut / quality ---- */
+export const QUALITY: { n: string; t: string; d: string }[] = [
+  { n: "01", t: "Two-stage QC", d: "Junior edit, senior review, then you." },
+  { n: "02", t: "Your style guide", d: "Cut pace, captions, music mood, brand colours and references." },
+  { n: "03", t: "Timelines you can plan around", d: "Clear turnaround for every engagement." },
+  { n: "04", t: "Two free revisions", d: "Included on every deliverable." },
+  { n: "05", t: "A trained team", d: "Editors learn your house style before live work." },
+  { n: "06", t: "Monthly improvement loop", d: "Reports, feedback and optimisation, every month." },
+];
+
+/* ---- Testimonials — ⚠️ PLACEHOLDER. Replace with real quotes (name + @handle + business). ---- */
+export const TESTIMONIALS: { quote: string; name: string; handle: string; business: string }[] = [
+  {
+    quote: "PLACEHOLDER. Add a real client quote here once you have one. Keep it specific and results-led.",
+    name: "Client Name",
+    handle: "@handle",
+    business: "Business, Mumbai",
+  },
+  {
+    quote: "PLACEHOLDER. A second real testimonial. Mention turnaround, consistency or a concrete result.",
+    name: "Client Name",
+    handle: "@handle",
+    business: "Brand, Bengaluru",
+  },
+  {
+    quote: "PLACEHOLDER. A third testimonial, ideally from an international client to show range.",
+    name: "Client Name",
+    handle: "@handle",
+    business: "Creator, Global",
+  },
+];
+
+/* ---- Tools & platforms we work across (honest trust strip, not endorsements) ---- */
+export const PLATFORMS = [
+  "YouTube",
+  "Instagram",
+  "Meta Ads",
+  "LinkedIn",
+  "Google Ads",
+  "Spotify",
+  "Apple Podcasts",
+  "Premiere",
+];
+
+/* ---- Who we work with (marquee) ---- */
+export const AUDIENCES = [
+  "Creators", "Founders", "Startups", "D2C Brands", "Restaurants", "Cafés",
+  "Clothing", "Salons", "Gyms", "Real Estate", "Events", "Local Business",
+];
+
+/* ---- FAQ ---- */
+export const FAQS: { q: string; a: string }[] = [
+  {
+    q: "How does pricing work?",
+    a: "Every project is scoped and quoted on a quick call, based on what you actually need. No rigid templates and no surprises.",
+  },
+  {
+    q: "How fast is the turnaround?",
+    a: "Most edits and designs ship within a couple of days. Larger productions get a clear timeline upfront, never a guess.",
+  },
+  {
+    q: "Can I change or pause scope?",
+    a: "Yes. Engagements are flexible and month-to-month. Scale up when you are busy and ease off when you are not.",
+  },
+  {
+    q: "What if I do not like the first draft?",
+    a: "Every deliverable includes two free revisions, and we build a style guide for your brand so the output gets sharper every month.",
+  },
+  {
+    q: "Do you work with Indian and international clients?",
+    a: "Yes, across India and worldwide. We adapt to your platform, audience and time zone.",
+  },
+  {
+    q: "How do we get started?",
+    a: "Book a call or send your brief. We set up a shared board, you drop your footage and requests, and the first draft follows quickly.",
+  },
 ];
