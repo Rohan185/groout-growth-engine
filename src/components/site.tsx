@@ -10,6 +10,7 @@ const ARROW = "/groout-arrow.png"; // rising-arrow mark
 
 // ⚠️ PLACEHOLDER contact details — replace with GroOut's real values.
 const WA = "https://wa.me/910000000000";
+const CAL = "https://cal.com/groout/strategy-call";
 const EMAIL = "kushal@groout.com";
 const TEL = "+910000000000";
 
@@ -102,7 +103,7 @@ function Hero() {
             repurposing, run by one dedicated crew for creators, founders and brands.
           </p>
           <div data-reveal="" className="mt-9 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
-            <a href="#contact" className="group inline-flex items-center gap-2 rounded-full bg-grow px-7 py-3.5 text-sm font-medium text-[oklch(0.02_0_0)] transition hover:brightness-110">
+            <a href={CAL} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 rounded-full bg-grow px-7 py-3.5 text-sm font-medium text-[oklch(0.02_0_0)] transition hover:brightness-110">
               Book a call <span className="arrow-rise inline-block">→</span>
             </a>
             <a href="#work" className="inline-flex items-center gap-2 rounded-full border border-black/15 px-7 py-3.5 text-sm font-medium text-cream transition hover:bg-black/5">
@@ -213,7 +214,7 @@ function Work() {
               <h2 className="font-display mt-5 text-[clamp(2.2rem,4.4vw,4rem)] font-medium leading-[1.0]">The work does <span className="italic text-grow">the talking.</span></h2>
               <p className="mt-5 max-w-[42ch] text-cream/55">From brand intros to founder UGC, fashion and real estate reels — a taste of the styles we cut. Swap any slot for your own campaign.</p>
             </div>
-            <a href="#contact" className="group inline-flex w-fit items-center gap-2 rounded-full bg-grow px-6 py-3 text-sm font-medium text-[oklch(0.02_0_0)] transition hover:brightness-110">
+            <a href={CAL} target="_blank" rel="noopener noreferrer" className="group inline-flex w-fit items-center gap-2 rounded-full bg-grow px-6 py-3 text-sm font-medium text-[oklch(0.02_0_0)] transition hover:brightness-110">
               Start a project <span className="arrow-rise inline-block">→</span>
             </a>
           </div>
@@ -345,7 +346,7 @@ function Ways() {
                 ))}
               </ul>
               <div className="mt-8 flex-1" />
-              <a href="#contact" className="group inline-flex w-fit items-center gap-2 text-sm font-medium text-cream gro-ul">Book a call <Arrow className="arrow-rise h-4 w-4 text-grow" /></a>
+              <a href={CAL} target="_blank" rel="noopener noreferrer" className="group inline-flex w-fit items-center gap-2 text-sm font-medium text-cream gro-ul">Book a call <Arrow className="arrow-rise h-4 w-4 text-grow" /></a>
             </div>
           ))}
         </div>
@@ -569,7 +570,7 @@ function Contact() {
     window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join("\n"))}`;
   };
   const rail = (kicker: string, label: string, href: string, last = false) => (
-    <a href={href} className="group flex flex-col gap-1 py-[18px]" style={last ? undefined : { borderBottom: "1px solid var(--line)" }}>
+    <a href={href} target={/^https?:/.test(href) ? "_blank" : undefined} rel={/^https?:/.test(href) ? "noopener noreferrer" : undefined} className="group flex flex-col gap-1 py-[18px]" style={last ? undefined : { borderBottom: "1px solid var(--line)" }}>
       <span className="eyebrow">{kicker}</span>
       <span className="font-display text-xl text-cream">{label} <span className="arrow-rise inline-block text-grow">↗</span></span>
     </a>
@@ -587,7 +588,7 @@ function Contact() {
           <div className="flex flex-col rounded-2xl border border-black/8 bg-surface/60 p-[clamp(28px,3vw,40px)]">
             {rail("WhatsApp", "Message us", WA)}
             {rail("Email", EMAIL, `mailto:${EMAIL}`)}
-            {rail("Call", "Book a call", `tel:${TEL}`, true)}
+            {rail("Book a call", "Pick a time", CAL, true)}
             <div className="eyebrow mt-auto pt-7">Bengaluru &amp; Mumbai · Worldwide</div>
           </div>
           <form onSubmit={submit} className="gro-grid-2 grid grid-cols-2 gap-5 rounded-2xl border border-black/8 bg-surface p-[clamp(28px,3vw,40px)]">

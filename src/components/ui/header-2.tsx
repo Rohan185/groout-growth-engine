@@ -55,7 +55,7 @@ export function Header() {
                             {link.label}
                         </a>
                     ))}
-                    <a className={cn(buttonVariants(), 'ml-2')} href="#contact">
+                    <a className={cn(buttonVariants(), 'ml-2')} href="https://cal.com/groout/strategy-call" target="_blank" rel="noopener noreferrer">
                         Book a call
                     </a>
                 </div>
@@ -102,7 +102,9 @@ export function Header() {
                     <div className="flex flex-col gap-2">
                         <a
                             className={cn(buttonVariants(), 'h-12 w-full text-base')}
-                            href="#contact"
+                            href="https://cal.com/groout/strategy-call"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             onClick={() => setOpen(false)}
                         >
                             Book a call
