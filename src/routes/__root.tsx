@@ -24,7 +24,7 @@ const JSON_LD = JSON.stringify({
   description:
     "Creative growth studio. Your entire content team: editing, design, social media, podcasts, paid ads and repurposing. Bengaluru and Mumbai, serving clients worldwide.",
   slogan: "You create. We grow it out.",
-  email: "hello@groout.com",
+  email: "kushal@groout.com",
   areaServed: ["India", "Worldwide"],
   address: [
     { "@type": "PostalAddress", addressLocality: "Bengaluru", addressRegion: "Karnataka", addressCountry: "IN" },

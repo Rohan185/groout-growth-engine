@@ -124,7 +124,7 @@ export const SITE = {
   whatsappNumber: "910000000000", // ⚠️ real number, country code, digits only
   whatsappMessage: "Hi GroOut! I'd like to talk about a project.",
   phone: "+910000000000", // ⚠️ real phone
-  email: "hello@groout.com", // ⚠️ real inbox (.com to match the live domain)
+  email: "kushal@groout.com", // ⚠️ real inbox
   city: "Bengaluru & Mumbai, India",
   instagram: "https://instagram.com/", // ⚠️ real links (leave "" to hide)
   linkedin: "https://linkedin.com/company/",

@@ -10,7 +10,7 @@ const ARROW = "/groout-arrow.png"; // rising-arrow mark
 
 // ⚠️ PLACEHOLDER contact details — replace with GroOut's real values.
 const WA = "https://wa.me/910000000000";
-const EMAIL = "hello@groout.studio";
+const EMAIL = "kushal@groout.com";
 const TEL = "+910000000000";
 
 /* -------------------- helpers -------------------- */
